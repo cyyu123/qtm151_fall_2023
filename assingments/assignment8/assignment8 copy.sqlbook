@@ -8,7 +8,7 @@ Print your name below
 -- SQLBook: Code
 -- Active: 1698879831567@@127.0.0.1@5432@postgres
 -- Write your own code
-SELECT 'My Emory ID is 2521588';
+-- My Emory ID is 2521588'
 -- SQLBook: Markup
 <font size = "5">
 
@@ -103,7 +103,7 @@ FROM drivers
 <font size = "3">
 
 - Obtain the average of "milliseconds" by "driverId" using ```GROUP BY```
-- User ```ORDER BY ``` to sort on the sum of points
+- Use ```ORDER BY ``` to sort by the average of "milliseconds"
 
 HINT: See the end of lectures 17 and 18 for details <br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
@@ -111,11 +111,10 @@ upper case and lower case letters
 -- SQLBook: Code
 -- Active: 1698879831567@@127.0.0.1@5432@formula1
 -- Write your own code
-select AVG(milliseconds) AS mean_milliseconds,
-        SUM(position) AS sum_points #there is no point column in lap_times, so I assumed it meant position not points
+select AVG(milliseconds) AS mean_milliseconds
 FROM lap_times
 GROUP BY "driverId"
-ORDER BY SUM(position) ASC;
+ORDER BY mean_milliseconds ASC;
 
 -- SQLBook: Markup
 <font size = "5">
